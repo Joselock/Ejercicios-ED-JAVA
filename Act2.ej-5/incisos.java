@@ -6,13 +6,15 @@ public class incisos {
     ArrayList<Profesor>profesores= new ArrayList<>();
 
     //Inciso a
-    public String getNombre(CategoriaD cient,int edad){
+    public String Nombre(CategoriaC cient,int edad){
 
         int i=0;
         boolean encontrado=false;
         String nombre=" ";
 
+        //Mientras que no se haya encontrado y no haya pasado por todos
         while (!encontrado && i<profesores.size())  {
+            //Si se cumple entonces ya fue encontrado
             if(profesores.get(i).getCient()==(cient) && profesores.get(i).getEdad()==edad){
                 nombre=profesores.get(i).getNombre();
                 encontrado=true;
@@ -29,6 +31,7 @@ public class incisos {
         LinkedList<Profesor>nombres=new LinkedList<>();
         int mayor=0;
 
+        //Recorro todas la edades y verifico cuales cumplen
         for(Profesor p:profesores){
             if(p.getEdad()>mayor){
                 mayor=p.getEdad();
@@ -44,35 +47,40 @@ public class incisos {
 
     //Inciso c
     public LinkedList<Registro> crear(){
-        
+
         LinkedList<Registro>reg=new LinkedList<>();
 
-        Registro inst= new Registro(CategoriaD.INSTRUCTOR,0);
-        Registro aux= new Registro(CategoriaD.AUXILIAR,0);
-        Registro asis= new Registro(CategoriaD.ASISTENTE,0);
+        //En el regitro voy a tener las cantidades de cada categoria docente
+        Registro inst = new Registro(CategoriaD.INSTRUCTOR,0);
+        Registro aux = new Registro(CategoriaD.AUXILIAR,0);
+        Registro asis = new Registro(CategoriaD.ASISTENTE,0);
+        Registro tit = new Registro(CategoriaD.INSTRUCTOR, 0);
 
-
+        //Se podria haber incrementado directamente en los *****
         for(Profesor p:profesores){
-            switch (p.getCient()) {
+            switch (p.getDoc()) {
                 case INSTRUCTOR:
-                    inst.incrementar();
+                    inst.incrementar();     //***   
                     break;
                 case AUXILIAR:
-                    aux.incrementar();
+                    aux.incrementar();      //*** 
                     break; 
                 case ASISTENTE:
-                    asis.incrementar();
+                    asis.incrementar();     //*** 
                     break;
-                case :
-                    .incrementar();
-                    break;           
+                 case TITULAR:
+                    tit.incrementar();      //*** 
+                    break;          
                 default:
                     break;
             }
         }
 
+        //Agrego las cantidades finales a la lista que voy a mostrar
         reg.add(inst);
         reg.add(aux);
+        reg.add(asis);
+        reg.add(tit);
 
         return reg;
     }

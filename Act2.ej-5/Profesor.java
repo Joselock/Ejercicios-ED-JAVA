@@ -3,7 +3,9 @@ public class Profesor {
 
     private String nombre;
     private int edad;
-    private CategoriaD cient;
+    private CategoriaC cient;
+    private CategoriaD doc;
+    private Cargo cargo;
 
     public Profesor(String nombre,int edad){
         this.nombre=nombre;
@@ -18,8 +20,16 @@ public class Profesor {
         return edad;
     }
 
-    public CategoriaD getCient(){
+    public CategoriaC getCient(){
         return cient;
+    }
+
+    public CategoriaD getDoc(){
+        return doc;
+    }
+
+    public Cargo getCargo(){
+        return cargo;
     }
 
 }
