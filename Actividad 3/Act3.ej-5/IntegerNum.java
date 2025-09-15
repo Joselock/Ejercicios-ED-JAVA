@@ -12,7 +12,7 @@ public class IntegerNum {
     
     public boolean UpOrder(){
         LinkedList<Integer>auxList=new LinkedList<>();
-        int mayor=!stackIntegerNum.isEmpty() ? stackIntegerNum.peek();
+        int mayor/* =!stackIntegerNum.isEmpty() ? stackIntegerNum.peek()*/=0;
         boolean fail=false;
 
         while (!stackIntegerNum.isEmpty() && !fail) {
@@ -30,9 +30,9 @@ public class IntegerNum {
                     stackIntegerNum.push(auxList.removeFirst());
                 }
             }
-           return !fail; 
+            
         }
-
+        return !fail;
     }
 
 }
