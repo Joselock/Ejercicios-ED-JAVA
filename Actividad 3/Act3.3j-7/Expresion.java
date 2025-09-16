@@ -14,7 +14,7 @@ public class Expresion {
     public String PostToIni(){
         Deque<String>stack=new ArrayDeque<>();
 
-        for (int i = 0; i < text.length; i++) {
+        for (int i = 0; i < text.length(); i++) {
             String caracter=text.substring(i, i+1);
             if(operator.contains(caracter)){
                 String op2=stack.pop();
