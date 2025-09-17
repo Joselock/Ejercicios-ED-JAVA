@@ -10,12 +10,12 @@ public class ListaEnteros {
         Deque<Integer>par=new ArrayDeque<>();
         Deque<Integer>impar=new ArrayDeque<>();
 
-        for(Integer v:pila){
-            int top = v.pop();
-            if (v.pop()%2==0) {
-                v.pop(par.push(top));
+        for(int i=0;i<pila.size();i++){
+             int top = pila.peek();
+            if (top%2==0) {
+                par.push(pila.pop());
             }else{
-                v.pop(impar.push(top));
+                impar.push(pila.pop());;
             }
         }
 

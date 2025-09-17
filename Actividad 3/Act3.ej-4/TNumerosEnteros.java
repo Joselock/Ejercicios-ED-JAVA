@@ -1,4 +1,4 @@
-import java.util.ArrayDeque;
+/*import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Queue;
 
@@ -6,7 +6,7 @@ public class TNumerosEnteros {
 
     private Queue<Integer>numenteros;
 
-    public numerosEnteros(){
+    public TNumerosEnteros(){
         numenteros = new Queue<Integer>();
     }
 
@@ -47,4 +47,4 @@ public class TNumerosEnteros {
         }
     }
 
-}
+}*/
