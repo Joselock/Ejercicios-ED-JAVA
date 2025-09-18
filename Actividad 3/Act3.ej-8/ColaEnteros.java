@@ -47,6 +47,18 @@ public class ColaEnteros {
             }
         }
     }
+
+    /*
+     * public void eliminarElementos(int valor) {
+    int size = cola.size();
+    for (int i = 0; i < size; i++) {
+        int elemento = cola.poll();
+        if (elemento <= valor) {
+            cola.add(elemento); // Solo agregamos de vuelta los que NO son mayores
+        }
+    }
+}
+     */
     
 
 }
