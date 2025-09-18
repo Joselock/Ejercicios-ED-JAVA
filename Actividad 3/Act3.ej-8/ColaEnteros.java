@@ -1,6 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.Queue;
 
+
 public class ColaEnteros {
 
     private int N;
@@ -18,15 +19,15 @@ public class ColaEnteros {
     public void setN(int N) {
         this.N = N;
     }
+    
 
     //Suma de los primeros n valores de la cola
     public int sumaN(int N){
         int suma=0;
-        Queue<Integer>aux=new ArrayDeque<>();
+        Queue<Integer>aux=new ArrayDeque<>(cola);
 
         if (!cola.isEmpty() && cola.size()>=N) {
-            aux=cola;
-
+            
             for (int i = 0; i < N; i++) {
                 suma+=aux.poll();
             }       
@@ -38,11 +39,14 @@ public class ColaEnteros {
 
     //Eliminar elementos mayores que una valor dado
     public void eliminarElementos(int valor){
-        for (int i=0;i<cola.size();i++) {
-            if(cola.peek()>valor){
+        int tamanio = cola.size();
+        for (int i=0;i<tamanio;i++) {
+            int elemento = cola.peek();
+            if(elemento>valor){
                 cola.poll();
             }
         }
     }
+    
 
 }
