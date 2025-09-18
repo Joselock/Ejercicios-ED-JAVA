@@ -26,11 +26,15 @@ public class ColaEnteros {
         int suma=0;
         Queue<Integer>aux=new ArrayDeque<>(cola);
 
-        if (!cola.isEmpty() && cola.size()>=N) {
+        if (!cola.isEmpty()) {
             
-            for (int i = 0; i < N; i++) {
+            if(cola.size()<=N){
+                suma = -1;
+            }else{
+                for (int i = 0; i < N; i++) {
                 suma+=aux.poll();
-            }       
+                } 
+            }                
         }
 
         return suma;
