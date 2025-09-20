@@ -23,12 +23,14 @@ public class ColaEnteros {
 
     //Suma de los primeros n valores de la cola
     public int sumaN(int N){
-        int suma=0;
+        int suma = 0;
+        int tamanio = 0;
         Queue<Integer>aux=new ArrayDeque<>(cola);
 
-        if (!cola.isEmpty()) {
-            
-            if(cola.size()<=N){
+        tamanio = cola.size();
+
+        if (!cola.isEmpty()) {          
+            if(tamanio<=N){
                 suma = -1;
             }else{
                 for (int i = 0; i < N; i++) {
