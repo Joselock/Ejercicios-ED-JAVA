@@ -38,7 +38,7 @@ public class Binaria {
         if (!bandera) {
             System.out.println("El numero no existe");
         }else{
-            System.out.println("El numero existe en la posicion "+mitad+" de la lista.");
+            System.out.println("El numero "+dato+" existe en la posicion "+mitad+" de la lista.");
         }
 
         
