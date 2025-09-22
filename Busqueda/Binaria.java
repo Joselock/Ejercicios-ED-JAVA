@@ -7,7 +7,7 @@ public class Binaria {
     public static void main(String[] args) {
 
     LinkedList<Integer>lista = new LinkedList<>();
-        int i=0,mitad=0,dato=5;
+        int inicio=0,mitad=0,dato=5;
         boolean bandera=false;
 
 
@@ -22,16 +22,16 @@ public class Binaria {
         lista.add(9);
         lista.add(10);
 
-        int tamanio=lista.size()-1;
+        int fin=lista.size()-1;
 
-        while (i<=tamanio && !bandera) {
-            mitad = (i+tamanio)/2;
+        while (inicio<=fin && !bandera) {
+            mitad = (inicio+fin)/2;
             if(lista.get(mitad)==dato){
                 bandera = true;
             }else if (lista.get(mitad)>dato) {
-                tamanio = mitad-1;
+                fin = mitad-1;
             }else if (lista.get(mitad)<dato) {
-                i = mitad+1;
+                inicio = mitad+1;
             }
         }
 
