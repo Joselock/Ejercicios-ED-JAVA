@@ -4,10 +4,10 @@ package appMusic;
 public class Cancion {
 
     private String titulo;
-    private String autor;
+    private Autor autor;
     private String lanzamiento;
 
-    public Cancion(String autor,String titulo,String lanzamiento){
+    public Cancion(Autor autor,String titulo,String lanzamiento){
         this.titulo = titulo;
         this.autor = autor;
         this.lanzamiento = lanzamiento;
@@ -21,11 +21,11 @@ public class Cancion {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(String autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
