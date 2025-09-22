@@ -1,15 +1,11 @@
 package appMusic;
 
-
 import java.util.ArrayDeque;
 import java.util.Deque;
-
-
-
 public class Reproductor {
 
-      private  Deque<Cancion>listaR = new ArrayDeque<>();
-      private  Deque<Cancion>pendientes = new ArrayDeque<>();
+      private  Deque<Cancion>listaR = new ArrayDeque<>();//pila
+      private  Deque<Cancion>pendientes = new ArrayDeque<>();//cola doble
 
       // Inciso b: reproducir las proximas n canciones
       public void reproducirN(int n){
@@ -44,6 +40,24 @@ public class Reproductor {
             
       }
 
+
+      // Inciso d: obtener cantidad de reproducciones
+      public void estadisticaR(){
+            Deque<Cancion>aux = new ArrayDeque<>(listaR);
+
+             while (!listaR.isEmpty()) {
+                  Cancion c = aux.pop();
+                  boolean encontrado = false;
+                  int i=0;
+
+                  while (encontrado) {
+                        
+                  }
+            }                       
+      
+
+            
+      } 
 
 
 }
