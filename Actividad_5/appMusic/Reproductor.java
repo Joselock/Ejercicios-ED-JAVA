@@ -23,16 +23,7 @@ public class Reproductor {
       public void reproducirAutor(Autor a){
             Deque<Cancion>aux = new ArrayDeque<>();
 
-            String nombre = a.getNombre();
-
-            while (pendientes.contains(nombre)) {
-                  Cancion c = pendientes.pollFirst();
-                  if(c.getAutor().getNombre().equals(nombre)){
-                        aux.push(c);
-                  }else{
-                        pendientes.offer(c);
-                  }
-            }
+            
 
             while (!aux.isEmpty()) {
                 pendientes.offerFirst(aux.pollFirst());  
@@ -41,6 +32,7 @@ public class Reproductor {
       }
 
 
+      /* 
       // Inciso d: obtener cantidad de reproducciones
       public void estadisticaR(){
             Deque<Cancion>aux = new ArrayDeque<>(listaR);
@@ -57,7 +49,7 @@ public class Reproductor {
       
 
             
-      } 
+      } */
 
 
 }
