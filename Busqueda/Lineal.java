@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Lineal {
 
-    ArrayList<Integer>lista = new ArrayList<>();
+    
 
-    int tamanio = lista.size();
+    
 
-    public boolean estaOrdenado(){
+    public boolean estaOrdenado(ArrayList<Integer>lista,int tamanio){
         boolean cumple = true;
         int i=0;
 
@@ -21,23 +21,35 @@ public class Lineal {
         return cumple;
     }
 
-    public int busquedaLineal(int n){
+    public int busquedaLineal(ArrayList<Integer>lista,int tamanio,int n){
         int posicion = 0;
         int i = 0;
-        boolean encontrado=false,noEsta=false;
+        boolean encontrado=false;
 
-        if(estaOrdenado()){
-            while(i<tamanio && (!encontrado || !noEsta)){
+        if(estaOrdenado(lista, tamanio)){
+            while(i<tamanio && !encontrado ){
                 if (lista.get(i)==n) {
                     encontrado = true;
                     posicion=i;
-                }else if (lista.get(i)>n) {
-                    noEsta = true;
+                }else if(lista.get(i)>n){
+                    posicion = -1;
+                }else{
+                    posicion = -1;
+                }
+                i++;
+            }
+        }else{
+            while (i<tamanio && !encontrado) {
+                if (lista.get(i)==n) {
+                    encontrado = true;
+                    posicion=i;
+                }else{
                     posicion = -1;
                 }
                 i++;
             }
         }
+
         return posicion;
     }
 

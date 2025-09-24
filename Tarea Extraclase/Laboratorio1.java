@@ -8,15 +8,37 @@ public class Laboratorio1 {
         this.list = new LinkedList<>();
     }
 
-    // Método a implementar por el estudiante: ORDENAMIENTO
-    public void sortList(boolean ascending) {
-        // TODO: Implementar según el algoritmo asignado
-        // 1. Quick Sort
-        // 2. Insertion Sort
-        // 3. Shell Sort
-        // 4. Merge Sort
-        // Usar 'ascending' para decidir si es ascendente o descendente 
-        throw new UnsupportedOperationException("Método sortList() no implementado");
+    
+    // Método a implementar por el estudiante: ORDENAMIENTO QUICK SHORT
+    public void sortList(boolean ascending,int inicio,int fin) {
+        
+        if (inicio<fin) {
+           int i = inicio;
+           int pivote = list.get(fin);
+           
+           // colocar menores a la izquierda del pivote
+           for (int j = inicio; j < fin; j++) {
+            if (list.get(j)<pivote) {
+                //intercambiar los elementos
+                int aux = list.get(i);
+                list.set(i,list.get(j));
+                list.set(j, aux);
+                i++;
+            }
+           }
+
+           //colocar el pivote en el lugar correcto
+           int temp = list.get(i);
+           list.set(i,list.get(fin));
+           list.set(fin, temp);
+
+
+           //se llama recursivamente
+           sortList(ascending,inicio,i-1);
+           sortList(ascending,i+1, fin);
+        }
+
+
     }
 
     // Método a implementar por el estudiante: BÚSQUEDA
@@ -92,13 +114,17 @@ public class Laboratorio1 {
             list.addElement(n);
         }
 
+        int tamanio = list.list.size(); ///
+        int inicio = 0;            ///Estas tres variable son necesarias para implementar QuickShort
+        int fin = tamanio-1;       ///
+
         // Imprimir lista original
         System.out.println("Lista original:");
         list.printList();
 
         // Intentar ordenar
         try {
-            list.sortList(true);
+            list.sortList(true,inicio,fin);
             System.out.println("Lista después de ordenar:");
             list.printList();
 
