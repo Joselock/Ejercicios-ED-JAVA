@@ -42,7 +42,7 @@ public class Laboratorio1 {
 
     }
 
-    //Metodo para saber si esta ordenado para la busqueda lineal
+    //Metodo para saber si esta ordenada la lista para la busqueda lineal
     public boolean estaOrdenado(int tamanio){
         boolean cumple = true;
         int i=0;
@@ -74,7 +74,7 @@ public class Laboratorio1 {
                 }
                 i++;
             }
-        }else{
+        }else{ //en caso de que no este oredenado
             while (i<tamanio && !encontrado) {
                 if (list.get(i)==value) {
                     encontrado = true;
