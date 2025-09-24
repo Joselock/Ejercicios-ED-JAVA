@@ -3,24 +3,14 @@ package Ordenamiento;
 import java.util.ArrayList;
 
 public class QuickShort {
-
-    ArrayList<Integer>lista = new ArrayList<>();
-    int tamanio = lista.size();
-
-    int ini=0;
-    int f=tamanio;
     
-    int inicio = lista.get(ini);
-    int fin = lista.get(f);
 
-
-
-    public void quickShort(int inicio,int fin){
+    public void quickShort(ArrayList<Integer>lista,int inicio,int fin){
         
 
         if (inicio<fin) {
            int i = inicio;
-           int pivote = fin;
+           int pivote = lista.get(fin);
            
            // colocar menores a la izquierda del pivote
            for (int j = inicio; j < fin; j++) {
@@ -39,10 +29,12 @@ public class QuickShort {
            lista.set(fin, temp);
 
            //se llama recursivamente
-           quickShort(inicio,i-1);
-           quickShort(i+1, fin);
+           quickShort(lista,inicio,i-1);
+           quickShort(lista,i+1, fin);
         }
 
     }
+
+    
 
 }
