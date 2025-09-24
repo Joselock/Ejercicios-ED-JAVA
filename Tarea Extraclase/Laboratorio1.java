@@ -1,3 +1,4 @@
+
 import java.util.LinkedList;
 
 public class Laboratorio1 {
@@ -41,16 +42,52 @@ public class Laboratorio1 {
 
     }
 
-    // Método a implementar por el estudiante: BÚSQUEDA
-    public int searchElement(int value) {
-        // TODO: Implementar según el algoritmo asignado
-        // 1. Búsqueda Lineal en listas ordenadas
-        // 2. Hash
-        // 3. Búsqueda Interpolada
-        // 4. Búsqueda Binaria
-        // IMPORTANTE: retornar la posición (índice empezando en 0) si se encuentra,
-        // o -1 si el valor no está en la lista.
-        throw new UnsupportedOperationException("Método searchElement() no implementado");
+    //Metodo para saber si esta ordenado para la busqueda lineal
+    public boolean estaOrdenado(int tamanio){
+        boolean cumple = true;
+        int i=0;
+
+        while(i < tamanio-1 && cumple) {
+            if (list.get(i)>list.get(i+1)) {
+                cumple = false;
+            }
+            i++;
+        }
+        return cumple;
+    }
+
+    // Método a implementar por el estudiante: BÚSQUEDA LINEAL EN LISTAS ORDENADAS
+    public int searchElement(int tamanio,int value) {
+        int posicion = 0;
+        int i = 0;
+        boolean encontrado=false;
+
+        if(estaOrdenado(tamanio)){
+            while(i<tamanio && !encontrado ){
+                if (list.get(i)==value) {
+                    encontrado = true;
+                    posicion=i;
+                }else if(list.get(i)>value){
+                    posicion = -1;
+                }else{
+                    posicion = -1;
+                }
+                i++;
+            }
+        }else{
+            while (i<tamanio && !encontrado) {
+                if (list.get(i)==value) {
+                    encontrado = true;
+                    posicion=i;
+                }else{
+                    posicion = -1;
+                }
+                i++;
+            }
+        }
+
+
+        return posicion;
     }
 
     // Devuelve una copia de la lista
@@ -143,7 +180,7 @@ public class Laboratorio1 {
         // Intentar búsqueda
         int value = 25;
         try {
-            int result = list.searchElement(value);
+            int result = list.searchElement(tamanio,value);
             if (result != -1) {
                 System.out.println("El valor " + value + " fue encontrado en la posición: " + result);
             } else {
