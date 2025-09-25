@@ -74,7 +74,7 @@ public class Laboratorio1 {
                 }
                 i++;
             }
-        }else{ //en caso de que no este oredenado
+        }else{ //en caso de que no este ordenado
             while (i<tamanio && !encontrado) {
                 if (list.get(i)==value) {
                     encontrado = true;
