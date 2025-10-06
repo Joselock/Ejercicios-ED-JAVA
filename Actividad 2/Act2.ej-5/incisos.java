@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
+
 
 public class incisos {
 
@@ -23,6 +25,26 @@ public class incisos {
         }
         return nombre;
     }
+
+    //Inciso (a) utilizando iteradores
+    /*public String Nombre(CategoriaC cient,int edad){
+
+        Iterator<Profesor> it = profesores.iterator();
+        boolean encontrado=false;
+        String nombre=" ";
+
+        //Mientras que no se haya encontrado y no haya pasado por todos
+        while (!encontrado && it.hasNext()){
+            //Si se cumple entonces ya fue encontrado
+            Profesor p = it.next();
+            if(p.getCient()==(cient) && p.getEdad()==edad){
+                nombre=p.getNombre();
+                encontrado=true;
+            }
+            i++;
+        }
+        return nombre;
+    }*/
 
 
     //Inciso b
