@@ -35,7 +35,7 @@ public class Incisos {
     }
 
     //Inciso c
-    public boolean darAltaTrabajador(String numId,String nombre,String dpto, float salario)throws IOException{
+    public boolean darAltaTrabajador(String numId,String nombre,String dpto, float salario)throws IOException,ClassNotFoundException{
 
         RandomAccessFile fichTrab = new RandomAccessFile(fichero, "rw");
 
@@ -98,18 +98,27 @@ public class Incisos {
     }
 
     //Inciso d
-    public ArrayList<Trabajador> salarioSuperior(String dpto,File fichero){
+    public ArrayList<Trabajador> salarioSuperior(String dpto,File fichero)throws IOException, ClassNotFoundException{
         ArrayList<Trabajador> devolver = new ArrayList<>();
         RandomAccessFile raf = new RandomAccessFile(fichero, "r");
 
         raf.seek(0);
-        int s = raf.readInt();
-        raf.skipBytes(s);
-        int tamanio = raf.readInt();
-        raf.readDouble();
 
+        //Leer la longitud del nombre de la empresa
+        int s = raf.readInt();
+
+        //Saltar el nombre de la empresa
+        raf.skipBytes(s);
+
+        //Leer la cantidad dde trabajadores
+        int tamanio = raf.readInt();
+
+        //Leer salario total
+        raf.readFloat();
+
+        //Leer cada trabajador
         for (int i = 0; i < tamanio; i++) {
-            Long datos = raf.readLong();
+            int datos = raf.readInt();
             byte[] datosT = new byte[datos];
             raf.read(datosT);
             Trabajador t = (Trabajador)Convert.toObject(datosT);
