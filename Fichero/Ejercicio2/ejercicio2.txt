@@ -8,5 +8,6 @@ y la suma del salario de todos ellos y a continuación, los datos de los trabaja
 2.Implemente los métodos que permitan:
      -Crear el fichero con los datos de la empresa, sin trabajadores.
      -Dar alta a un nuevo trabajador al final del fichero.
-     -A partir de los datos que están en el fichero, obtenga todos los trabajadores de la empresa que pertenezcan a un departamento dado y que su salario sea superior a $500.
+     -A partir de los datos que están en el fichero, obtenga todos los trabajadores de la empresa 
+      que pertenezcan a un departamento dado y que su salario sea superior a $500.
      -Dar alta a un nuevo trabajador en una posición dada.
