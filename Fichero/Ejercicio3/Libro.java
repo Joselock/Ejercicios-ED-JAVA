@@ -1,17 +1,21 @@
 package Fichero.Ejercicio3;
 
-public class Libro {
+import java.io.Serializable;
+import java.util.List;
+
+public class Libro implements Serializable{
 
     private String id;
     private String titulo;
-    private String autores;
+    private List<Autor> autores;
     private String anio;
     private int cantEjemplares;
+
+    private static final long serialVersionIUD = 2L;
 
     public Libro(String id, String titulo, String autores, String anio, int cantEjemplares) {
         this.id = id;
         this.titulo = titulo;
-        this.autores = autores;
         this.anio = anio;
         this.cantEjemplares = cantEjemplares;
     }
@@ -31,14 +35,7 @@ public class Libro {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
-    public String getAutores() {
-        return autores;
-    }
-
-    public void setAutores(String autores) {
-        this.autores = autores;
-    }
+    
 
     public String getAnio() {
         return anio;
@@ -54,6 +51,14 @@ public class Libro {
 
     public void setCantEjemplares(int cantEjemplares) {
         this.cantEjemplares = cantEjemplares;
+    }
+
+    public List<Autor> getAutores() {
+        return autores;
+    }
+
+    public void setAutores(List<Autor> autores) {
+        this.autores = autores;
     }
 
     
