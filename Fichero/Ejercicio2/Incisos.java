@@ -29,7 +29,7 @@ public class Incisos {
         //Escribir la cantidad de trabajadores inicial 0
         fichTrab.writeInt(0);
 
-        //Ecribor la suma del salario de los trabajadores
+        //Escribir la suma del salario de los trabajadores
         fichTrab.writeFloat(0);
         fichTrab.close();
     }
