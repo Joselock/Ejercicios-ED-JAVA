@@ -97,6 +97,8 @@ public class Facultad {
             hecho = false;
         }
 
+        raf.close();
+
         return hecho;
     }
 
