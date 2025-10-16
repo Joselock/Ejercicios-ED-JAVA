@@ -46,7 +46,7 @@ public class Estudiante {
     }
 
     public boolean vacunar() {
-        // TODO Auto-generated method stub
+
         throw new UnsupportedOperationException("Unimplemented method 'vacunadas'");
     }
 
