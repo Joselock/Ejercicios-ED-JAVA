@@ -1,0 +1,10 @@
+Para el cumplimiento de las tareas docentes, el personal de una facultad está organizado con niveles de dirección 
+intermedio hasta llegar a cada estudiante. En cada año hay varias brigadas y a cada una de estas últimas pertenecen 
+varios estudiantes. De cada facultad se conoce el nombre, la extensión telefónica y el nombre del Decano. Por su 
+parte, del año se conoce el nombre o identificador del año, así como el nombre del Profesor Principal del Año y el 
+del Jefe de Año por la FEU. De cada brigada se conoce el nombre o identificador. De cada estudiante se conoce el 
+nombre, el sexo, la dirección particular y si es militante de la juventud o no.
+
+a-Implemente los métodos necesarios para obtener las brigadas que tengan una matrícula determinada.
+b-Implemente los métodos para obtener los datos de los estudiantes (de sexo femenino) de un grupo dado que son
+ militantes de la juventud.
