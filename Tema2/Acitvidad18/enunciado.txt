@@ -1,0 +1,17 @@
+En el Laboratorio Nacional de Ensayo Químico se está estudiando la descomposición de sustancias complejas-A 
+a través del calor. Las sustancias complejas A al llegar a 70 grados se descomponen en varias sustancias B. 
+Estas últimas a 100 grados se descomponen en diferentes sustancias complejas C que al llegar a 150 grados 
+finalmente se descomponen en sustancias simples (que no tienen descomposición). De todas las sustancias se 
+controla nombre, estado de agregación (sólido, líquido, gaseoso), y el poder reactivo que se corresponde con 
+un número entre 0 y 100. Adicionalmente, de las sustancias complejas A se controla la cantidad de electrones 
+del ultimo nivel, de las complejas B la velocidad de descomposición, y de las complejas C es importante conocer 
+si reaccionan o no con el oxígeno. La velocidad de descomposición de las sustancias B es un valor único, no 
+existiendo dos sustancias diferentes, de este tipo con igual velocidad. El laboratorio mantiene un registro de 
+la descomposición de las sustancias complejas A más comunes. Además, necesita controlar, para el análisis de 
+toxicidad, la información de las sustancias complejas C que cumplan las siguientes condiciones:
+
+-Provengan de la compleja B cuya velocidad de descomposición es igual a un valor dado.
+-Se descompongan en al menos 3 sustancias simples gaseosas. 
+
+a-Diseñe las clases necesarias, para modelar la situación anterior. 
+b-Implemente un método que permita dar solución a las condiciones antes mencionadas.
