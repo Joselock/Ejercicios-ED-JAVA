@@ -1,4 +1,4 @@
-package Tema2.Acitvidad18.Respuesta;
+package Tema2.Actividad18.Respuesta;
 
 public class SustanciaA extends Sustancia{
     private int electronesUN;

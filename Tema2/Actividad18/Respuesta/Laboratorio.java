@@ -1,4 +1,4 @@
-package Tema2.Acitvidad18.Respuesta;
+package Tema2.Actividad18.Respuesta;
 
 import java.util.LinkedList;
 import java.util.List;
