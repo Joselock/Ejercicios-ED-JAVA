@@ -1,0 +1,28 @@
+Geoge R. R. Martin ddesea implementar un sistema para la gestion de su mundo de fantasia, de 
+cara al lanzamiento de una nueva temporada de la serie Game of Thrones. El mundo esta encabezado
+por Poniente, donde se desarrollan las principales tramas de la serie, y del que se conoce su 
+nombre, la fecha de fundacion, la cantidad de reinos que la componen y el nombre del rey.
+Poniente esta formado por varios reinos,y de cada reino se conoce su nombre,la fecha de 
+fundacion , el nombre de la casa gobernante y los nombres de los señores que lo han dirigido. 
+Cada reino esta compuesto por varias Casas Nobles,y de cada casa noble se conoce su nombre, la 
+fecha de fundacion, la cantidad de batallas ganadas y los familiares con derecho al trono. 
+Cada familiar con derecho al trono cuenta con un nombre, edad y posicion en la linea de 
+sucecion.
+
+a-Implemente las clases que permitan modelar de forma adecuada el mundo de
+fantasia de George R. R. Martin.
+
+b-Implemente los metodos que permitan obtener la casa noble con mayor cantidad
+de batallas ganadas de un reino determinado. Se recibe como parametro el nombre
+del reino.
+
+c-Implemente los metodos que permitan trasladar la casa noble con mayor cantidad
+de batallas ganadas de un reino a otro. Se recibe los nombres de ambos reinos
+como parameto.
+
+d-Implemente los metodos que permitan obtener la cantidad de casas nobles cuyo
+reino haya sido dirigido por al menos tres señores y que hayan ganado una cantidad
+de batallas igual a un valor dado.
+
+e-Implemente los metodos que permitan obtener la cantidad de familiares con 
+derecho al trono que tiene cada reino.
