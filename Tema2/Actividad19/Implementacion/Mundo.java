@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import cu.edu.cujae.ceis.tree.binary.BinaryTreeNode;
@@ -149,6 +150,59 @@ public class Mundo {
 
 
     //Inciso d /====================================================
+    public int cantCasasNobles(int cantGanadas){
+        int cantidad = 0;
+
+        InBreadthIterator<Object>iter = ponienteTree.inBreadthIterator();
+
+        while (iter.hasNext()) {
+            BinaryTreeNode<Object>nodo = iter.nextNode();
+
+            if (nodo.getInfo() instanceof Reino) {
+                if (((Reino)nodo.getInfo()).getGobernatesPasados().size() >=3) {
+                    List<BinaryTreeNode<Object>>casas = (List<BinaryTreeNode<Object>>)ponienteTree.getSons(nodo);
+                    
+                    for (Object c : casas) {
+                        if(((CasaNoble)c).getBatallasGanadas() == cantGanadas){
+                            cantidad++;
+                        }
+                    }
+                }
+            }
+            nodo = iter.nextNode();
+        }
+
+        return cantidad;
+    }
+
+
+    //Inciso e /======================================================
+    public LinkedList<FamiliaresDerecho> obtenerFamiliares(){
+        LinkedList<FamiliaresDerecho>ret = new LinkedList<>();
+        InBreadthIterator<Object>iter = ponienteTree.inBreadthIterator();
+
+        while (iter.hasNext()) {
+            BinaryTreeNode<Object>nodo = iter.nextNode();
+            int cantidad = 0;
+
+            if (nodo.getInfo() instanceof Reino) {
+                Reino reino = (Reino)nodo.getInfo();
+                List<BinaryTreeNode<Object>>casas = (List<BinaryTreeNode<Object>>)ponienteTree.getSons(nodo);
+                
+                for (Object c : casas) {
+                    cantidad+=((CasaNoble)c).getFamiliares().size();
+                }
+
+                FamiliaresDerecho derechosReino = null ;
+                derechosReino.setNombreReino(reino.getNombre());
+                derechosReino.setCantConDerecho(cantidad);
+                
+                ret.add(derechosReino);
+            }
+            nodo = iter.nextNode();
+        }
+        return ret;
+    }
 
 
 }
