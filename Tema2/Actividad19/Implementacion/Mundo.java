@@ -131,6 +131,7 @@ public class Mundo {
 
 
     //Inciso d /====================================================
+    
     public int cantCasasNobles(int cantGanadas){
         int cantidad = 0;
 
@@ -160,6 +161,7 @@ public class Mundo {
 
 
     //Inciso e /======================================================
+
     public LinkedList<FamiliaresDerecho> obtenerFamiliares(){
         LinkedList<FamiliaresDerecho>ret = new LinkedList<>();
         InBreadthIterator<Object>iter = ponienteTree.inBreadthIterator();
