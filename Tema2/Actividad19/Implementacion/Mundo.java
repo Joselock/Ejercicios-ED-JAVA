@@ -28,7 +28,7 @@ public class Mundo {
                 Reino r = (Reino)nodo.getInfo();
                 if (r.getNombre().equals(reino)) {
                     encontrado = true;
-                    List<BinaryTreeNode<Object>>sons = (List<BinaryTreeNode<Object>>)ponienteTree.getSons(nodo);
+                    List<Object>sons = ponienteTree.getSonsInfo(nodo);
 
                     for (Object c : sons) {
                         if (((CasaNoble)c).getBatallasGanadas()>mayor) {
@@ -45,6 +45,11 @@ public class Mundo {
 
 
     //Inciso c /================================================================
+    // Este metodo esta mal, la libreria de arboles tiene los metodos para eliminar y insertar nodos
+    // que en este caso seria eliminar e insertar una casa noble
+    //////////////////////////////////////////////////////////////////////////////
+    /// /////////////////////////////////////////////////////////////////////
+    /// /////////////////////////////////////////////////////////////////////
     public boolean traslado(String deja,String recibe){
         boolean hecho = false;
         boolean eliminado ;
@@ -80,7 +85,7 @@ public class Mundo {
             if (nodo.getInfo() instanceof Reino) {
                 if(((Reino)nodo.getInfo()).getNombre().equals(deja)){
                     encontrado = true;
-                    List<BinaryTreeNode<Object>>sons = (List<BinaryTreeNode<Object>>)ponienteTree.getSons(nodo);
+                    List<Object>sons = ponienteTree.getSonsInfo(nodo);
                     for (Object c : sons) {
                         if (((CasaNoble)c).getBatallasGanadas()>mayor) {
                             ca = (CasaNoble)c;
@@ -96,7 +101,7 @@ public class Mundo {
         return ca;
     }
 
-    //Metodo para agegar la casa al  nuevo reino
+    //Metodo para agregar la casa al  nuevo reino
     public boolean agregarAlNuevoReino(InBreadthIterator<Object>iter,CasaNoble casa,String recibe) {
         boolean encontrado = false;
         boolean hecho = false;
@@ -148,6 +153,11 @@ public class Mundo {
     }
 
 
+    //===========================================================
+    /////////////////////////////////////////////////////////////
+    /// /////////////////////////////////////////////////////////
+    /// ////////////////////////////////////////////////////////
+
 
     //Inciso d /====================================================
     public int cantCasasNobles(int cantGanadas){
@@ -160,7 +170,7 @@ public class Mundo {
 
             if (nodo.getInfo() instanceof Reino) {
                 if (((Reino)nodo.getInfo()).getGobernatesPasados().size() >=3) {
-                    List<BinaryTreeNode<Object>>casas = (List<BinaryTreeNode<Object>>)ponienteTree.getSons(nodo);
+                    List<Object>casas = ponienteTree.getSonsInfo(nodo);
                     
                     for (Object c : casas) {
                         if(((CasaNoble)c).getBatallasGanadas() == cantGanadas){
@@ -187,7 +197,7 @@ public class Mundo {
 
             if (nodo.getInfo() instanceof Reino) {
                 Reino reino = (Reino)nodo.getInfo();
-                List<BinaryTreeNode<Object>>casas = (List<BinaryTreeNode<Object>>)ponienteTree.getSons(nodo);
+                List<Object>casas = ponienteTree.getSonsInfo(nodo);
                 
                 for (Object c : casas) {
                     cantidad+=((CasaNoble)c).getFamiliares().size();

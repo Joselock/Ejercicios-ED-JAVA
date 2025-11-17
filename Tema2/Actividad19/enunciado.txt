@@ -1,4 +1,4 @@
-Geoge R. R. Martin ddesea implementar un sistema para la gestion de su mundo de fantasia, de 
+Geoge R. R. Martin desea implementar un sistema para la gestion de su mundo de fantasia, de 
 cara al lanzamiento de una nueva temporada de la serie Game of Thrones. El mundo esta encabezado
 por Poniente, donde se desarrollan las principales tramas de la serie, y del que se conoce su 
 nombre, la fecha de fundacion, la cantidad de reinos que la componen y el nombre del rey.
