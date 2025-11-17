@@ -1,0 +1,113 @@
+====Metodo para eliminar un nodo(*Esta en la libreria de arbol binario)======
+
+public E deleteNode(BinaryTreeNode<E> node) {
+		E info = null;
+
+		if (node != null) {	
+			if(node.equals(root))
+				root = null;
+			else{
+				InDepthIterator<E> iterator = inDepthIterator();
+
+				boolean foundedNode = false;
+
+				while(iterator.hasNext() && !foundedNode){
+					BinaryTreeNode<E> father = iterator.nextNode();
+
+					//search if node its son of father
+					if(father.getLeft() != null){
+						if(father.getLeft().equals(node)){
+							foundedNode = true;
+
+							father.setLeft(node.getRight());
+						}
+						else{
+							BinaryTreeNode<E> prev = father.getLeft();
+							BinaryTreeNode<E> cursor = prev.getRight();
+
+							while(cursor != null && !foundedNode){
+								if(cursor.equals(node)){
+									foundedNode = true;
+
+									prev.setRight(cursor.getRight());
+								}
+								else{
+									prev = cursor;
+
+									cursor = cursor.getRight();
+								}
+							}
+						}
+					}					
+				}
+
+				if(foundedNode)
+					info = node.getInfo();
+			}
+		}
+
+		return info;
+	}
+
+
+======Metodo para agregar un nodo(*Esta en la libreria de arbol binario)=========
+
+
+public boolean insertNode(BinaryTreeNode<E> node, BinaryTreeNode<E> father) {
+		boolean inserted = false;
+
+		if(node != null)
+		{
+			if (isEmpty()) {
+				if (father == null) {
+					setRoot(node);
+					inserted = true;
+				} 			
+			} 
+			else {
+				if (father != null) {							
+					InDepthIterator<E> iterator = inDepthIterator();
+
+					boolean stop = false;
+
+					while(iterator.hasNext() && !stop){
+						BinaryTreeNode<E> iterNode = iterator.nextNode();
+
+						if(iterNode.equals(father)){
+							stop = true;
+
+							BinaryTreeNode<E> cursor = father.getLeft();
+
+							if (cursor == null) {
+								father.setLeft(node);
+							} else {
+								while (cursor.getRight() != null) {
+									cursor = cursor.getRight();
+								}
+								cursor.setRight(node);
+							}
+						}
+
+						inserted = true;
+					}				
+				} 
+				else {
+					if (((BinaryTreeNode<E>) root).getRight() != null) {
+						BinaryTreeNode<E> cursor = ((BinaryTreeNode<E>) root).getRight();
+
+						while (cursor.getRight() != null) {
+							cursor = cursor.getRight();
+						}
+						cursor.setRight(node);
+					} 
+					else {
+						((BinaryTreeNode<E>) root).setRight(node);
+					}
+
+					inserted = true;
+				}
+			}
+		}
+
+		return inserted;
+	}

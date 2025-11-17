@@ -44,112 +44,83 @@ public class Mundo {
     }
 
 
-    //Inciso c /================================================================
-    // Este metodo esta mal, la libreria de arboles tiene los metodos para eliminar y insertar nodos
-    // que en este caso seria eliminar e insertar una casa noble
-    //////////////////////////////////////////////////////////////////////////////
-    /// /////////////////////////////////////////////////////////////////////
-    /// /////////////////////////////////////////////////////////////////////
+    //===========================================================
+    /////////////////////////////////////////////////////////////
+    /// /////////////////////////////////////////////////////////
+    /// ////////////////////////////////////////////////////////
+
+
+    //Inciso c /======================================================
+    
     public boolean traslado(String deja,String recibe){
         boolean hecho = false;
-        boolean eliminado ;
         boolean agregado;
-        Reino reinoD = null;
-        CasaNoble casa = null;
+        BinaryTreeNode<Object> reino = null;
+        BinaryTreeNode<Object> casa = null;
 
         InBreadthIterator<Object>iter = ponienteTree.inBreadthIterator();
 
-        casa = buscarMayorCantBatallas(iter,deja,reinoD);
+        casa = buscarCasaMayorCantBatallas(iter,deja); // Buscar la casa con la mayor cantidad de batallas ganadas
+        reino = dondeVoyAnadirNodo(iter, recibe);  // Buscar el reino a donde voy a anadir la casa con la mayor cantidad
 
-        eliminado = eliminarCasa(reinoD,casa);
+        //Metodo que agrega la casa al reino que me pasan(recibe)
+        agregado = ponienteTree.insertNode(casa, reino);
+        
+        //Metdo que borra la casa del reino que me pasan (deja)
+        ponienteTree.deleteNode(casa);
 
-        agregado = agregarAlNuevoReino(iter, casa, recibe);
 
-        if (eliminado && agregado) {
+        if (agregado) { //Si se agrego la casa al reino
             hecho = true;
         }
-
 
         return hecho;
     }
 
     //Metodo para buscar la casa con mas batallas
-    public CasaNoble buscarMayorCantBatallas(InBreadthIterator<Object>iter,String deja,Reino reinoD){
-        CasaNoble ca = null;
+    public BinaryTreeNode<Object> buscarCasaMayorCantBatallas(InBreadthIterator<Object>iter,String deja){
+        BinaryTreeNode<Object> ca = null;
         boolean encontrado = false;
+        int mayor = 0;
 
         while (iter.hasNext() && !encontrado) {
             BinaryTreeNode<Object>nodo = iter.nextNode();
-            int mayor = 0;
 
             if (nodo.getInfo() instanceof Reino) {
                 if(((Reino)nodo.getInfo()).getNombre().equals(deja)){
                     encontrado = true;
                     List<Object>sons = ponienteTree.getSonsInfo(nodo);
                     for (Object c : sons) {
-                        if (((CasaNoble)c).getBatallasGanadas()>mayor) {
-                            ca = (CasaNoble)c;
-                        }
+                        if(c instanceof CasaNoble){
+                            if(((CasaNoble)c).getBatallasGanadas()>mayor) {
+                            mayor = ((CasaNoble)c).getBatallasGanadas();
+                            ca = (BinaryTreeNode<Object>)c;
+                            }
+                        }   
                     }
-                    reinoD = ((Reino)nodo.getInfo());
-
                 }
             }
-            nodo = iter.nextNode();
         }
 
         return ca;
     }
 
-    //Metodo para agregar la casa al  nuevo reino
-    public boolean agregarAlNuevoReino(InBreadthIterator<Object>iter,CasaNoble casa,String recibe) {
+    public BinaryTreeNode<Object> dondeVoyAnadirNodo(InBreadthIterator<Object>iter,String recibe){
+        BinaryTreeNode<Object>r = null;
         boolean encontrado = false;
-        boolean hecho = false;
-        Reino r = null;
 
         while (iter.hasNext() && !encontrado) {
             BinaryTreeNode<Object>nodo = iter.nextNode();
-        
+
             if (nodo.getInfo() instanceof Reino) {
                 if(((Reino)nodo.getInfo()).getNombre().equals(recibe)){
                     encontrado = true;
-                    r = (Reino)nodo.getInfo();
-                    r.getCasas().add(casa); // agrego la casa al nuevo reino
+                    r = nodo;
                 }
             }
-            nodo = iter.nextNode();
         }
-
-        if (r.getCasas().contains(casa)) {
-            hecho = true;
-        }
-
-        return hecho;
-    }
-
-    //Metodo para eliminar una casa
-    public boolean eliminarCasa(Reino reino,CasaNoble casa){
-        boolean hecho = false;
-        boolean stop = false;
-        String nombre;
-
-        Iterator<CasaNoble>iter = reino.getCasas().iterator(); 
-
-        while (iter.hasNext() && !stop) {
-            CasaNoble c = iter.next();
-            nombre = c.getNombre();
-            
-            if (casa.getNombre().equals(nombre)){
-                iter.remove();
-                stop = true;
-            }
-        }
-
-        if(!(reino.getCasas().contains(casa))){
-            hecho = true;
-        }
-
-        return hecho;
+       
+        return r;
     }
 
 
@@ -173,13 +144,15 @@ public class Mundo {
                     List<Object>casas = ponienteTree.getSonsInfo(nodo);
                     
                     for (Object c : casas) {
-                        if(((CasaNoble)c).getBatallasGanadas() == cantGanadas){
+                        if(c instanceof CasaNoble){
+                            if(((CasaNoble)c).getBatallasGanadas() == cantGanadas){
                             cantidad++;
+                            }
                         }
+                        
                     }
                 }
             }
-            nodo = iter.nextNode();
         }
 
         return cantidad;
@@ -200,7 +173,9 @@ public class Mundo {
                 List<Object>casas = ponienteTree.getSonsInfo(nodo);
                 
                 for (Object c : casas) {
-                    cantidad+=((CasaNoble)c).getFamiliares().size();
+                    if (c instanceof CasaNoble) {
+                        cantidad+=((CasaNoble)c).getFamiliares().size();
+                    }         
                 }
 
                 FamiliaresDerecho derechosReino = null ;
@@ -209,7 +184,6 @@ public class Mundo {
                 
                 ret.add(derechosReino);
             }
-            nodo = iter.nextNode();
         }
         return ret;
     }

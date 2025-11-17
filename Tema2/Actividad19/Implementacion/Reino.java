@@ -5,7 +5,6 @@ public class Reino {
     private String fechaFundacion;
     private String casaGobernante;
     private ArrayList<String>gobernatesPasados;
-    private ArrayList<CasaNoble>casas;
 
     public Reino(String nombre, String fechaFundacion, String casaGobernante) {
 
@@ -13,7 +12,6 @@ public class Reino {
         this.fechaFundacion = fechaFundacion;
         this.casaGobernante = casaGobernante;
         this.gobernatesPasados = new ArrayList<>();
-        this.casas = new ArrayList<>();
     }
 
     
@@ -49,16 +47,6 @@ public class Reino {
     public void setGobernatesPasados(ArrayList<String> gobernatesPasados) {
         this.gobernatesPasados = gobernatesPasados;
     }
-
-    public ArrayList<CasaNoble> getCasas() {
-        return casas;
-    }
-
-    public void setCasas(ArrayList<CasaNoble> casas) {
-        this.casas = casas;
-    }
-
-    
 
     
 
