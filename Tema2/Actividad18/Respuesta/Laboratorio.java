@@ -19,7 +19,6 @@ public class Laboratorio {
 
 
     //Inciso a 
-    //-Busqueda a lo ancho
     
     public LinkedList<SustanciaC> sonGaseosos(int velocidad){
         LinkedList<SustanciaC>ret = new LinkedList<>();
@@ -31,10 +30,10 @@ public class Laboratorio {
                 if (nodo.getInfo() instanceof SustanciaB) {
                     SustanciaB b = (SustanciaB)nodo.getInfo();
                     if (b.getVelocidadD() == velocidad) {
-                        List<BinaryTreeNode<Object>> hijosC = sustanciasTree.getSons(nodo);
-                        for (BinaryTreeNode<Object> hijoC : hijosC) {
-                            if(hijoC.getInfo() instanceof SustanciaC){
-                                SustanciaC sustanciaC = (SustanciaC)hijoC.getInfo();
+                        List<Object> hijosC = sustanciasTree.getSonsInfo(nodo);
+                        for (Object hijoC : hijosC) {
+                            if(hijoC instanceof SustanciaC){
+                                SustanciaC sustanciaC = (SustanciaC)hijoC;
                                 if (cumple(hijoC)) {
                                     ret.add(sustanciaC);
                                 }
@@ -48,15 +47,15 @@ public class Laboratorio {
         return ret;
     }
 
-    public boolean cumple(BinaryTreeNode<Object> hijoC){
+    public boolean cumple(Object hijoC){
 
         boolean cumple = false;
-        List<BinaryTreeNode<Object>> hijos = sustanciasTree.getSons(hijoC);
+        List<Object> hijos = sustanciasTree.getSonsInfo((BinaryTreeNode<Object>)hijoC);
         int cont = 0;
 
-        for (BinaryTreeNode<Object> h : hijos) {
-            if (h.getInfo() instanceof SustanciaSimple) {
-                SustanciaSimple s = (SustanciaSimple) h.getInfo();
+        for (Object h : hijos) {
+            if (h instanceof SustanciaSimple) {
+                SustanciaSimple s = ((SustanciaSimple)h);
                 if (s.getEstado().equals(Estado.GASEOSO.name())) {
                     cont++;
                 }
