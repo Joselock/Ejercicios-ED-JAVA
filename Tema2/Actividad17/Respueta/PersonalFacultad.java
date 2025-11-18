@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 import cu.edu.cujae.ceis.tree.binary.BinaryTreeNode;
 import cu.edu.cujae.ceis.tree.general.GeneralTree;
@@ -77,7 +77,7 @@ public class PersonalFacultad {
             if (nodo.getInfo() instanceof Grupo) {
                 Grupo g = (Grupo)nodo.getInfo();
                 if (g.getIdentificador().equals(id)) {
-                    ArrayList<BinaryTreeNode<Object>>sons = (ArrayList<BinaryTreeNode<Object>>)personalTree.getSons(nodo);
+                    List<BinaryTreeNode<Object>>sons = personalTree.getSons(nodo);
 
                     for (Object stud : sons) {
                         if (((Estudiante)stud).getSexo() == 'F' && ((Estudiante)stud).isMilitancia()) {

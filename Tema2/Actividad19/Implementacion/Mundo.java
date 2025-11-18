@@ -106,6 +106,7 @@ public class Mundo {
         return ca;
     }
 
+    // Buscar el reino donde voy a agregar el la casa
     public BinaryTreeNode<Object> dondeVoyAnadirCasa(InBreadthIterator<Object>iter,String recibe){
         BinaryTreeNode<Object>r = null;
         boolean encontrado = false;
