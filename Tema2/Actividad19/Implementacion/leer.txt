@@ -52,7 +52,6 @@ public E deleteNode(BinaryTreeNode<E> node) {
 
 ======Metodo para agregar un nodo(*Esta en la libreria de arbol binario)=========
 
-
 public boolean insertNode(BinaryTreeNode<E> node, BinaryTreeNode<E> father) {
 		boolean inserted = false;
 

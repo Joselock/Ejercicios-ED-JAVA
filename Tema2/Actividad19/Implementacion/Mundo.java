@@ -14,8 +14,8 @@ public class Mundo {
     }
 
     //Inciso b /================================================================
-    public String mayorCantBatGanadas(String reino){
-        String casa = " ";
+    public CasaNoble mayorCantBatGanadas(String reino){
+        CasaNoble casa = null;
         boolean encontrado = false;
 
         InBreadthIterator<Object>iter = ponienteTree.inBreadthIterator();
@@ -31,13 +31,14 @@ public class Mundo {
                     List<Object>sons = ponienteTree.getSonsInfo(nodo);
 
                     for (Object c : sons) {
-                        if (((CasaNoble)c).getBatallasGanadas()>mayor) {
-                            casa = ((CasaNoble)c).getNombre();
-                        }
+                        if(c instanceof CasaNoble){
+                            if (((CasaNoble)c).getBatallasGanadas()>mayor) {
+                            casa = ((CasaNoble)c);
+                            }
+                        }            
                     }
                 }
             }
-            nodo = iter.nextNode();
         }
 
         return casa;
@@ -61,12 +62,12 @@ public class Mundo {
         InBreadthIterator<Object>iter = ponienteTree.inBreadthIterator();
 
         casa = buscarCasaMayorCantBatallas(iter,deja); // Buscar la casa con la mayor cantidad de batallas ganadas
-        reino = dondeVoyAnadirNodo(iter, recibe);  // Buscar el reino a donde voy a anadir la casa con la mayor cantidad
+        reino = dondeVoyAnadirCasa(iter, recibe);  // Buscar el reino a donde voy a anadir la casa con la mayor cantidad
 
-        //Metodo que agrega la casa al reino que me pasan(recibe)
+        //Metodo que agrega la casa al reino que me pasan (recibe)
         agregado = ponienteTree.insertNode(casa, reino);
         
-        //Metdo que borra la casa del reino que me pasan (deja)
+        //Metodo que borra la casa del reino que me pasan (deja)
         ponienteTree.deleteNode(casa);
 
 
@@ -105,7 +106,7 @@ public class Mundo {
         return ca;
     }
 
-    public BinaryTreeNode<Object> dondeVoyAnadirNodo(InBreadthIterator<Object>iter,String recibe){
+    public BinaryTreeNode<Object> dondeVoyAnadirCasa(InBreadthIterator<Object>iter,String recibe){
         BinaryTreeNode<Object>r = null;
         boolean encontrado = false;
 
