@@ -11,15 +11,14 @@ import cu.edu.cujae.ceis.tree.iterators.general.InBreadthIterator;
 
 public class Laboratorio {
 
-    GeneralTree<Object>sustanciasTree = new GeneralTree<>(); 
+    GeneralTree<Object>sustanciasTree; 
 
     public Laboratorio(GeneralTree<Object> sustanciasTree) {
-        this.sustanciasTree = sustanciasTree;
+        this.sustanciasTree = new GeneralTree<>();
     }
 
 
-    //Inciso a 
-    
+    //Inciso a    
     public LinkedList<SustanciaC> sonGaseosos(int velocidad){
         LinkedList<SustanciaC>ret = new LinkedList<>();
         InBreadthIterator<Object>iter = sustanciasTree.inBreadthIterator();
