@@ -3,8 +3,6 @@ package Tema2.Actividad18.Respuesta;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.xml.soap.Node;
-
 import cu.edu.cujae.ceis.tree.binary.BinaryTreeNode;
 import cu.edu.cujae.ceis.tree.general.GeneralTree;
 import cu.edu.cujae.ceis.tree.iterators.general.InBreadthIterator;
@@ -71,7 +69,7 @@ public class Laboratorio {
         return cumple;
     }
 
-    //===BUSQUEDA EN PROFUNDO
+    //===BUSQUEDA A LO PROFUNDO
     public LinkedList<SustanciaC> sustanciasC (int velocidad) {
 
         LinkedList<SustanciaC>sustancias= new LinkedList<SustanciaC> ();
