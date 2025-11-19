@@ -1,6 +1,6 @@
 package Tema2.Actividad18.Respuesta;
 
-public class SustanciaB extends SustanciaA{
+public class SustanciaB extends Sustancia{
     private int velocidadD;
 
     public SustanciaB(String nombre, String estado, int poderReativo, int electronesUN, int velocidadD) {
