@@ -4,7 +4,7 @@ public class SustanciaSimple extends Sustancia{
 
     public SustanciaSimple(String nombre, String estado, int poderReativo, int electronesUN, int velocidadD,
             boolean reaccionan) {
-        super(nombre, estado, poderReativo, electronesUN, velocidadD, reaccionan);
+        super(nombre, estado, poderReativo);
         //TODO Auto-generated constructor stub
     }
 

@@ -4,7 +4,7 @@ public class SustanciaB extends Sustancia{
     private int velocidadD;
 
     public SustanciaB(String nombre, String estado, int poderReativo, int electronesUN, int velocidadD) {
-        super(nombre, estado, poderReativo, electronesUN);
+        super(nombre, estado, poderReativo);
         this.velocidadD = velocidadD;
     }
 

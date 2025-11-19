@@ -5,7 +5,7 @@ public class SustanciaC extends Sustancia{
 
     public SustanciaC(String nombre, String estado, int poderReativo, int electronesUN, int velocidadD,
             boolean reaccionan) {
-        super(nombre, estado, poderReativo, electronesUN, velocidadD);
+        super(nombre, estado, poderReativo);
         this.reaccionan = reaccionan;
     }
 
