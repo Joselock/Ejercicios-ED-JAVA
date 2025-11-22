@@ -17,12 +17,13 @@ public class Mundo {
     public CasaNoble mayorCantBatGanadas(String reino){
         CasaNoble casa = null;
         boolean encontrado = false;
+        int mayor;
 
         InBreadthIterator<Object>iter = ponienteTree.inBreadthIterator();
 
         while (iter.hasNext() && !encontrado) {
             BinaryTreeNode<Object>nodo = iter.nextNode();
-            int mayor = 0;
+            mayor = 0;
 
             if (nodo.getInfo() instanceof Reino) {
                 Reino r = (Reino)nodo.getInfo();
@@ -34,6 +35,7 @@ public class Mundo {
                         if(c instanceof CasaNoble){
                             if (((CasaNoble)c).getBatallasGanadas()>mayor) {
                             casa = ((CasaNoble)c);
+                            mayor = ((CasaNoble)c).getBatallasGanadas();
                             }
                         }            
                     }
@@ -82,10 +84,11 @@ public class Mundo {
     public BinaryTreeNode<Object> buscarCasaMayorCantBatallas(InBreadthIterator<Object>iter,String deja){
         BinaryTreeNode<Object> ca = null;
         boolean encontrado = false;
-        int mayor = 0;
+        int mayor;
 
         while (iter.hasNext() && !encontrado) {
             BinaryTreeNode<Object>nodo = iter.nextNode();
+            mayor = 0;
 
             if (nodo.getInfo() instanceof Reino) {
                 if(((Reino)nodo.getInfo()).getNombre().equals(deja)){

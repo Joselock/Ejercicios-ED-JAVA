@@ -10,8 +10,9 @@ import cu.edu.cujae.ceis.tree.iterators.general.InDepthIterator;
 
 public class Laboratorio {
 
-    GeneralTree<Object>sustanciasTree;
-    GeneralTree<Sustancia>laboratorio;
+    GeneralTree<Object>sustanciasTree; //Para busqueda a lo ancho
+    GeneralTree<Sustancia>laboratorio; //Para busqueda en profundidad
+    // ESTAS SON DISTINTAS FORMAS DE HACERLO , YA SEA CON OBJECT O SUSTANCIA
 
     public Laboratorio(GeneralTree<Object> sustanciasTree,GeneralTree<Sustancia>laboratorio) {
         this.sustanciasTree = new GeneralTree<>();
@@ -19,7 +20,8 @@ public class Laboratorio {
     }
 
 
-    //Inciso a === BUSQUEDA A LO ANCHO   
+    //Inciso a 
+    // === BUSQUEDA A LO ANCHO   
     public LinkedList<SustanciaC> sonGaseosos(int velocidad){
         LinkedList<SustanciaC>ret = new LinkedList<>();
         InBreadthIterator<Object>iter = sustanciasTree.inBreadthIterator();
@@ -30,10 +32,10 @@ public class Laboratorio {
                 if (nodo.getInfo() instanceof SustanciaB) {
                     SustanciaB b = (SustanciaB)nodo.getInfo();
                     if (b.getVelocidadD() == velocidad) {
-                        List<Object> hijosC = sustanciasTree.getSonsInfo(nodo);
-                        for (Object hijoC : hijosC) {
-                            if(hijoC instanceof SustanciaC){
-                                SustanciaC sustanciaC = (SustanciaC)hijoC;
+                        List<BinaryTreeNode<Object>> hijosC = sustanciasTree.getSons(nodo);
+                        for (BinaryTreeNode<Object> hijoC : hijosC) {
+                            if((SustanciaC)hijoC.getInfo() instanceof SustanciaC){
+                                SustanciaC sustanciaC = (SustanciaC)hijoC.getInfo();
                                 if (cumple(hijoC)) {
                                     ret.add(sustanciaC);
                                 }
@@ -41,16 +43,15 @@ public class Laboratorio {
                         }
                     }
                 }
-                nodo = iter.nextNode();
         }
 
         return ret;
     }
 
-    public boolean cumple(Object hijoC){
+    public boolean cumple(BinaryTreeNode<Object> hijoC){
 
         boolean cumple = false;
-        List<Object> hijos = sustanciasTree.getSonsInfo((BinaryTreeNode<Object>)hijoC);
+        List<Object> hijos = sustanciasTree.getSonsInfo(hijoC);
         int cont = 0;
 
         for (Object h : hijos) {
