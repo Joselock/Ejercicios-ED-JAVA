@@ -2,12 +2,13 @@ package Busqueda;
 
 import java.util.ArrayList;
 
-public class MainLineal {
+public class Main {
 
     public static void main(String[] args) {
 
         ArrayList<Integer>lista = new ArrayList<>();
         Lineal l = new Lineal();
+        Binaria b = new Binaria();
 
         lista.add(1);
         lista.add(24);
@@ -24,6 +25,7 @@ public class MainLineal {
         int n = 24;
 
         int p = l.busquedaLineal(lista, tamanio, n);
+        b.binaria(lista);
 
         System.out.println("El numero "+n+" esta en la posicion: "+p);
         

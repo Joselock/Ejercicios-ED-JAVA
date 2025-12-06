@@ -1,0 +1,21 @@
+{
+    "java.project.sourcePaths": [
+        ".",
+        "Tema1",
+        "Tema1\\Act3.ej-9",
+        "Tema1\\Actividad 2\\Act2.ej-4",
+        "Tema1\\Actividad 3\\Act3.3j-7",
+        "Tema1\\Actividad_5",
+        "Tema1\\Iteradores",
+        "Tema1\\Pruebas\\2023",
+        "Tema1\\Tarea Extraclase",
+        "Tema2\\Actividad17",
+        "Tema2\\Actividad17\\Respueta",
+        "Tema2\\Actividad19\\Implementacion",
+        "Tema2\\Árboles Binarios Generales y Lexicográficos\\src\\BinaryGeneralAndLexTree-src-v3.0",
+        "Tema3"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\admin\\Documents\\PROGRAMACIOOOON\\Ejercicios ED-JAVA\\Tema3\\Grafos Enlazados\\libs\\LinkedGraph_1.0.jar"
+    ]
+}

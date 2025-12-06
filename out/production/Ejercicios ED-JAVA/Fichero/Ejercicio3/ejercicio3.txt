@@ -1,0 +1,18 @@
+3.	En la librería de la CUJAE se controla la disponibilidad de libros para satisfacer la demanda por semestre. 
+Para ello se cuenta con un fichero (Libros.dat) en el que se almacenan los datos de cada uno de los libros con 
+que se cuenta. Este fichero tiene un encabezado con el total de libros y luego los datos de cada libro, o sea, 
+su identificador, título, autores, año de impresión y cantidad de ejemplares en existencia.
+
+Cada semestre se actualiza la relación de libros a través de un fichero (Actualización.dat), en el que aparece 
+por cada libro: un carácter (A o B), el identificador del libro y la cantidad de ejemplares a actualizar. Si 
+aparece una A significa que se incrementa la cantidad existente de dicho libro en el valor especificado y en caso 
+de ser una B, se decrementa en dicha cantidad. Asuma que todos los datos de los ficheros son correctos y que los 
+registros de ambos ficheros se encuentran almacenados ordenados ascendentemente por el identificador del libro.
+
+•	Identifique las estructuras de datos presentes en la solución al problema y las clases que las implementan.
+•	Identifique las relaciones entre las estructuras de datos presentes en el problema. Haga diagramas de clases 
+    UML para representar los objetos y sus relaciones.
+•	Implemente las clases.
+•	Diseñe e implemente las clases necesarias para dar solución de manera eficiente al problema.
+•	Implemente los métodos que permitan actualizar el fichero Libros.dat a partir de la información contenida 
+    en el fichero Actualización.dat.

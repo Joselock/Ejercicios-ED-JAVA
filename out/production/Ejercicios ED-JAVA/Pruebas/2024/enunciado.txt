@@ -1,0 +1,19 @@
+El departamento de economia de un centro superior debe calcular en cada mes el pago que se dee destinar al pago
+de los estudiantes por concepto de estipendio y ayudantia. Para ello el departamento cuenta con un reporte de 
+estudiantes activos en ese mes, que es una lista ordenada alfabeticamente con la infomacion de los estudiantes.
+Tambien se cuenta con un registro con la informacion sobre los alumnos ayudantes(nombre y anio de ayuudantia)
+ordenados alfabeticamente. Para calcular el pago que se le hace a un estudiante se tiene en cuenta, el anio 
+academico, asi como en caso de ser alumno ayudante, los anios de experiencia. De cada estudiante se conoce: 
+nombre,anio academico y carrera.
+
+a-Diga las estructuras de datos que propone para modelar la situacion anterior de forma que se pueda emplear 
+eficientemente.Justifique.
+
+b-Implemente en JAVA las clases necesarias para resolver la situacion planteada.
+
+c-Implemente las funciones necesarias para calcular el total de dinero que se debe destinar a la universidad
+para pagar a los estudiantes en un mes de forma eficiente. Emplee la funcion float estipendio(int anioAcademico,
+int expAA) que dado el anio academico y los anios de ayudantia devuelva el estipendio del estudiante.
+
+NOTA: Suponga que tiene la funcion int OrdAlf(String p1,String p2), que devuelve 1 si p1 va antes que p2 en orden 
+alfabetico, -1 en caso contrario, 0 si son iguales.

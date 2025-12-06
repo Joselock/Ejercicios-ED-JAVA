@@ -1,0 +1,13 @@
+Se pretende automatizar el sistema que permite controlar los resultados de la etapa clasificatoria de la Serie 
+Nacional de Baseball donde intervienen 16 equipos (4 equipos por cada zona). En la etapa de clasificación cada 
+equipo juega con el resto (15 equipos) solo una vez, se debe considerar que se celebran todos los juegos. Se 
+debe utilizar una estructura de datos que permita reflejar esta situación y en la que sea posible identificar el 
+equipo ganador o el perdedor de cada juego a partir de la relación entre los equipos, con la menor cantidad de 
+información posible. De cada equipo se conoce: nombre que lo identifica, cantidad de jugadores, provincia y zona.
+
+a- Defina las clases que permitan modelar la situación anterior.
+
+b- Implemente los métodos que permitan determinar si un equipo dado solo ha perdido juegos con equipos de su zona.
+
+c- Implemente los métodos que permitan dada una zona, obtener el nombre de los equipos clasificados y la cantidad 
+de juegos ganados; sabiendo que en cada zona clasifican los equipos que tengan más de 10 juegos ganados.
