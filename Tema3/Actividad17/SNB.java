@@ -58,8 +58,8 @@ public class SNB {
 
 
     //Inciso c
-    public ArrayList<Aux> Zona(String zona){
-        ArrayList<Aux>aux = new ArrayList<Aux>();
+    public ArrayList<Clasificados> Zona(String zona){
+        ArrayList<Clasificados>aux = new ArrayList<Clasificados>();
         int count = 0;
         Iterator<Vertex>it = games.getVerticesList().iterator();
 
@@ -71,11 +71,10 @@ public class SNB {
                 int pos = Find(e);
                 int wonGames = games.inDegreeDG(pos);
                 if (wonGames>=10) {
-                    aux.add(new Aux(e.getNombre(),wonGames));
+                    aux.add(new Clasificados(e.getNombre(),wonGames));
                 }
             }
         }
-
 
         return aux;
     }
