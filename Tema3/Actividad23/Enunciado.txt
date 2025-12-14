@@ -1,0 +1,19 @@
+El Instituto Nacional de Recursos Hidráulicos (INRH) desea automatizar el control de la red hidráulica nacional 
+que está compuesta por un conjunto de embalses y una red de tuberías que los interconectan. Esta red permite 
+redistribuir el agua almacenada en función de roturas y periodos de sequía, entre otros. 
+Cada embalse tiene un identificador, una capacidad máxima y una mínima, así como la cantidad de agua realmente 
+embalsada, expresadas en metros cúbicos (m3). De cada tramo de la red se conoce la longitud (m), el radio (m) y 
+tiempo (s) necesario para trasvasar 1 m3 de agua en el tramo. 
+Se considera que un embalse está en riesgo de desbordamiento si su cantidad de agua almacenada está por encima del 
+98% de su capacidad máxima.
+
+a- Defina las clases que permiten modelar este problema.
+
+b- Implemente los métodos que permitan obtener los embalses en riesgo de desbordamiento de los que se puede 
+   trasvasar agua hacia un embalse dado, sin pasar por otros embalses.
+
+c- Implementar el método que permita, dado un embalse, si está en riesgo de desbordamiento, determinar a cuáles 
+   embalses, en qué cantidad y en qué tiempo se debe trasvasar agua para disminuir o eliminar este riesgo. Se debe 
+   garantizar que ninguno de estos embalses a los que se llevará el agua quede con más del 90% de su capacidad 
+   máxima y que no requiera pasar el agua a través de otros embalses.
+   La cantidad actual > máxima * 0.98   
