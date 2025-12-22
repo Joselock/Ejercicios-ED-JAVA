@@ -1,4 +1,4 @@
-package Actividad17;
+package Actividad22.Implementacion;
 
 public class Equipo {
 
