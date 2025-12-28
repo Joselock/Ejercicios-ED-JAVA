@@ -11,5 +11,17 @@ a- Defina las clases que permitan modelar la situación anterior. Justifique la 
 b- Implemente los métodos que permitan identificar a los estudiantes que quieren trabajar con todos sus compañeros 
    de grupo.
 
+   •Deteminar el total de vertices -> getVerticesList().size()
+   •Recorrer todos los vertices del grafo -> getVerticesList()
+   •Para cada vertice -> Deterinar grado de salida(cantidad de aristas) -> outDegree(pos) o vertex.getEdgeList().size()
+                      -> Comparar el grado de la salida con el total de vertices -1.No se cuenta asi mismo. 
+
 c- Implemente los métodos que permitan identificar a los estudiantes, que no sean militantes, con los que nadie 
-    quiere trabajar.   
+    quiere trabajar.
+
+    •Recorrer todos los vertices del grafo -> getVerticesList()
+    •Para cada vertice -> Obtener estudiante(casteo)
+                       -> Si no es militante
+                       -> Determinar grado de entrada -> inDegreeDG(pos)
+                       -> Si es 0, añadir a la lista 
+       
