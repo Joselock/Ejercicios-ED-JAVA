@@ -42,7 +42,7 @@ public class Sistema {
     }
 
 
-    //Solicitados coon primera preferencia
+    //Solicitados con primera preferencia
     public int countFirstPreferencesForStudent(Vertex current){
         int total = 0;
         Estudiante currentEstudiante = (Estudiante)current.getInfo();
@@ -70,5 +70,43 @@ public class Sistema {
 
 
     //Inciso c
+    public List<Estudiante> preferenciaTrabajarOtroMilitante(){
+        List<Estudiante>estudiantes = new LinkedList<>();
+        Iterator<Vertex>it = encuesta.getVerticesList().iterator();
+
+        while (it.hasNext()) {
+            Vertex vertex = it.next();
+            Estudiante e = (Estudiante)vertex.getInfo();
+
+            if (e.isMilitante() && hasFirstPreferenceMilitant(vertex)) {
+                estudiantes.add(e);
+            }
+        }
+
+        return estudiantes;
+    }
+
+    //Ver si es la primera preferencia de los militantes
+    public boolean hasFirstPreferenceMilitant(Vertex vertex){
+        boolean isMilitant = false;
+        boolean edgeFound = false;
+        Iterator<Edge>edgeIt = vertex.getEdgeList().iterator();
+
+        while (!edgeFound && edgeIt.hasNext()) {
+            Edge edge = edgeIt.next();
+            WeightedEdge we = (WeightedEdge)edge;
+            int pos = (Integer)we.getWeight();
+            if (pos == 1) {
+                Vertex adjVertex = we.getVertex();
+                Estudiante adjEstudiante = (Estudiante)adjVertex.getInfo();
+                if(adjEstudiante.isMilitante()){
+                    isMilitant = true;
+                }
+                edgeFound = true;
+            }
+        }
+
+        return isMilitant;
+    }
 
 }
