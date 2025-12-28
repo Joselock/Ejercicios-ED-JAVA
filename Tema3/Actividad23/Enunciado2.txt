@@ -1,0 +1,12 @@
+A partir del enunciado del ejercicio anterior, ahora se conoce además que en cada encuesta se especifica el orden 
+de preferencia (1, 2, 3, 4, etc.) en el cual un estudiante selecciona a los compañeros con los que quiere trabajar.
+
+•	Añadir pesos en las aristas. // Aclarar que el peso puede ser una instancia de una clase.
+
+a- Defina las clases que permitan modelar la nueva situación. Justifique la estructura de datos seleccionada.
+
+b- Implemente los métodos que permitan obtener el o los estudiantes que más hayan sido solicitados con 
+preferencia 1.
+
+c- Implemente los métodos que permitan determinar los estudiantes militantes cuya mayor preferencia (1) sea trabajar 
+con otro estudiante militante.

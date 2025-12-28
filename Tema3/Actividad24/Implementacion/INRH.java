@@ -1,4 +1,4 @@
-package Actividad23.Implementacion;
+package Actividad24.Implementacion;
 
 import java.util.Iterator;
 import java.util.LinkedList;

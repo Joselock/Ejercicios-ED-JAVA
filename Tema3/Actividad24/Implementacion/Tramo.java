@@ -1,4 +1,4 @@
-package Actividad23.Implementacion;
+package Actividad24.Implementacion;
 
 public class Tramo {
     private float longitud;

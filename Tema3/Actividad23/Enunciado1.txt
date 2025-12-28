@@ -1,0 +1,15 @@
+Se desea automatizar un sistema que permita procesar los resultados de una encuesta aplicada a un grupo de 
+estudiantes de 2do año de Informática. En dicha encuesta cada estudiante indica aquellos estudiantes del 
+grupo con los que le gustaría trabajar. De cada estudiante se conoce el identificador, el nombre, la fecha 
+de nacimiento y si es militante. 
+
+•	Grafo dirigido: Estudiante ---------quiere trabajar con ------> Estudiante.
+•	La lógica indica que del estudiante encuestado sale con quien quiere trabajar.
+
+a- Defina las clases que permitan modelar la situación anterior. Justifique la estructura de datos seleccionada.
+
+b- Implemente los métodos que permitan identificar a los estudiantes que quieren trabajar con todos sus compañeros 
+   de grupo.
+
+c- Implemente los métodos que permitan identificar a los estudiantes, que no sean militantes, con los que nadie 
+    quiere trabajar.   
