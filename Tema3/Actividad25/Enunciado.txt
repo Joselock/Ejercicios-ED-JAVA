@@ -1,0 +1,22 @@
+Se desea desarrollar un sistema para la gestión de una región turística. La región está formada por centros 
+turísticos conectados mediante carreteras. De cada centro turístico se conoce su nombre (que lo identifica de 
+manera única), la descripción y si dispone de áreas de descanso. Cada carretera conecta dos centros turísticos 
+en un solo sentido y, de cada una, se conoce el costo de viaje, el tiempo de recorrido en minutos y la distancia.
+
+La región turística recibe solicitudes de viaje realizadas por clientes que desean trasladarse entre los centros 
+turísticos. De cada solicitud se conoce el nombre del cliente, el centro turístico en el que se encuentra y el 
+presupuesto máximo disponible para el costo del viaje. Las solicitudes se atienden en orden de llegada y para cada 
+una, el sistema debe sugerir al cliente aquellos centros turísticos a los que pueda viajar de manera directa (sin 
+pasar por otros centros) y cuyo costo no supere el presupuesto disponible.
+
+•	Grafo: centros turísticos (vértices) y carreteras (aristas).
+•	Grafo dirigido con peso en las aristas: Peso en las aristas: el costo de viaje, el tiempo de recorrido en minutos 
+    y la distancia.
+•	Cola de solicitudes. // Destacar que no tiene nada que ver con el grafo.
+
+a- Defina las clases que permitan modelar la situación descrita anteriormente. Justifique las estructuras de datos 
+    seleccionadas.
+b- Implemente los métodos que permitan procesar la próxima solicitud, generando la lista de sugerencias de viaje 
+   correspondientes. Cada sugerencia debe incluir el centro turístico de destino, el costo y el tiempo del viaje.    
+c- Implemente los métodos que permitan encontrar el centro turístico que recibe la mayor cantidad de carreteras 
+   directas provenientes de otros centros turísticos.
