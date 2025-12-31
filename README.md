@@ -1,4 +1,4 @@
-Este repositorio contiene ejemplos y ejercicios resueltos de los tres temas de la asignatura 'Estructura de Datos' en el lenguaje de programacion 'Java'.
+Este repositorio contiene ejemplos y ejercicios resueltos de los tres temas de la 'Estructura de Datos' en el lenguaje de programacion 'Java'.
 
 -Tema 1: Estructuras Lineales.
 
