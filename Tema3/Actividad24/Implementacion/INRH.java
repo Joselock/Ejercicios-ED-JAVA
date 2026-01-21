@@ -57,7 +57,7 @@ public class INRH {
                 while (it.hasNext() && exceso>0) {
                     WeightedEdge we = (WeightedEdge)it.next();
                     Embalse destino = (Embalse)we.getVertex().getInfo();
-                    double capacidadDisponible = destino.getCapacidadMax() * 9.0 - destino.getCantidadEmbalsada();
+                    double capacidadDisponible = destino.getCapacidadMax() * 0.9 - destino.getCantidadEmbalsada();
 
                     if(capacidadDisponible  > 0){
                         double cantidadEnviar = Math.min(capacidadDisponible, exceso);
