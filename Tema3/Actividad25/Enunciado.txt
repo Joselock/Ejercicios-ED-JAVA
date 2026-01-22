@@ -16,7 +16,16 @@ pasar por otros centros) y cuyo costo no supere el presupuesto disponible.
 
 a- Defina las clases que permitan modelar la situación descrita anteriormente. Justifique las estructuras de datos 
     seleccionadas.
+
 b- Implemente los métodos que permitan procesar la próxima solicitud, generando la lista de sugerencias de viaje 
-   correspondientes. Cada sugerencia debe incluir el centro turístico de destino, el costo y el tiempo del viaje.    
+   correspondientes. Cada sugerencia debe incluir el centro turístico de destino, el costo y el tiempo del viaje. 
+
 c- Implemente los métodos que permitan encontrar el centro turístico que recibe la mayor cantidad de carreteras 
    directas provenientes de otros centros turísticos.
+
+d- Implemente los métodos que permitan obtener los centros turísticos que disponen de áreas de descanso y desde 
+    los cuales sea posible viajar a un centro turístico dado, sin pasar por otros centros turísticos, siempre que el 
+    tiempo del viaje sea menor que un valor dado.
+    
+e- Implemente los métodos que permitan obtener el centro turístico con áreas de descanso al que se pueda llegar con 
+   el menor costo, a partir de un centro turístico dado, sin pasar por otros centros turísticos.   

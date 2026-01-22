@@ -76,7 +76,7 @@ public class RegionTuristica {
 
         while (i<this.region.getVerticesList().size()) {
             Vertex vertex = region.getVerticesList().get(i);
-            int cantidad = this.region.degreeDG(i);
+            int cantidad = this.region.inDegreeDG(i);
             if (cantidad > mayor) {
                 mayor = cantidad;
                 centrosTuristicos.clear();
@@ -107,7 +107,7 @@ public class RegionTuristica {
                     if (centroDestino.getNombre().equals(centro.getNombre())) {
                         Carretera carretera = (Carretera)we.getWeight();
                         if (carretera.getTiempo()<valorTiempo) {
-                            listaCentros.add(centro);
+                            listaCentros.add(centroDestino);
                         }
                         aristaEncontrada = true;
                     }
